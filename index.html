@@ -36,6 +36,7 @@
     
     
         <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+        <link rel="stylesheet" type="text/css" href="_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
         <link rel="stylesheet" type="text/css" href="_static/extra_css.css" />
     
       
@@ -256,20 +257,35 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="admonitions.html" class="md-nav__link">
+        Admonitions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
     
       
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
-      <label class="md-nav__link" for="__nav_2">
+      <label class="md-nav__link" for="__nav_3">
         <a class="" href="demo_api.html">Examples and Uses</a>
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Examples and Uses" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Examples and Uses
         </label>
@@ -416,11 +432,11 @@ node.js installed.</p>
 <span class="n">html_theme</span> <span class="o">=</span> <span class="s2">&quot;sphinx_immaterial&quot;</span>
 </code></pre></div>
 </div>
-<p>There are a lot more ways to customize this theme. See <a class="reference internal" href="customization.html#customization"><span class="std std-ref">Customization</span></a>
+<p>There are a lot more ways to customize this theme. See <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#customization" title="(in Python v3.10)"><span>Basic customization</span></a>
 or <code class="docutils literal notranslate"><span class="pre">theme.conf</span></code> for more details.</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Settings used in this documentation</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="c1"># -- HTML theme settings ------------------------------------------------</span>
+<details class="example">
+<summary>
+Settings used in this documentation</summary><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="c1"># -- HTML theme settings ------------------------------------------------</span>
 
 <span class="n">extensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;sphinx_immaterial&quot;</span><span class="p">)</span>
 <span class="n">html_title</span> <span class="o">=</span> <span class="s2">&quot;Sphinx-Immaterial&quot;</span>
@@ -481,44 +497,57 @@ or <code class="docutils literal notranslate"><span class="pre">theme.conf</span
 
 </code></pre></div>
 </div>
-</div>
-<div class="toctree-wrapper compound">
+</details><div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="customization.html">Customization</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="customization.html#heroes">Heroes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customization.html#confval-hero">hero</a></li>
 <li class="toctree-l2"><a class="reference internal" href="customization.html#configuration-options">Configuration Options</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="customization.html#html-logo"><code class="docutils literal notranslate"><span class="pre">html_logo</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="customization.html#html-theme-options-dict"><code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code> dict</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#site-url"><code class="docutils literal notranslate"><span class="pre">site_url</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#repo-url"><code class="docutils literal notranslate"><span class="pre">repo_url</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#repo-name"><code class="docutils literal notranslate"><span class="pre">repo_name</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#repo-type"><code class="docutils literal notranslate"><span class="pre">repo_type</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#edit-uri"><code class="docutils literal notranslate"><span class="pre">edit_uri</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#features"><code class="docutils literal notranslate"><span class="pre">features</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#icon-for-the-repository"><code class="docutils literal notranslate"><span class="pre">icon</span></code> for the repository</a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#palette"><code class="docutils literal notranslate"><span class="pre">palette</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#direction"><code class="docutils literal notranslate"><span class="pre">direction</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#google-analytics-account"><code class="docutils literal notranslate"><span class="pre">google_analytics_account</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#globaltoc-depth"><code class="docutils literal notranslate"><span class="pre">globaltoc_depth</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#globaltoc-collapse"><code class="docutils literal notranslate"><span class="pre">globaltoc_collapse</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#globaltoc-includehidden"><code class="docutils literal notranslate"><span class="pre">globaltoc_includehidden</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#version-dropdown"><code class="docutils literal notranslate"><span class="pre">version_dropdown</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#version-dropdown-text"><code class="docutils literal notranslate"><span class="pre">version_dropdown_text</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#version-json"><code class="docutils literal notranslate"><span class="pre">version_json</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#version-info"><code class="docutils literal notranslate"><span class="pre">version_info</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="customization.html#confval-html_logo">html_logo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="customization.html#confval-html_theme_options">html_theme_options</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-site_url">site_url</a></li>
+<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-repo_url">repo_url</a></li>
+<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-repo_name">repo_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-repo_type">repo_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-edit_uri">edit_uri</a></li>
+<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-features">features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-icon-for-the-repository">icon for the repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-palette">palette</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="customization.html#confval-primary-color">primary color</a></li>
+<li class="toctree-l5"><a class="reference internal" href="customization.html#confval-accent-color">accent color</a></li>
+<li class="toctree-l5"><a class="reference internal" href="customization.html#confval-Toggle-icon">Toggle icon</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-direction">direction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-google_analytics_account">google_analytics_account</a></li>
+<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-globaltoc_depth">globaltoc_depth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-globaltoc_collapse">globaltoc_collapse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-globaltoc_includehidden">globaltoc_includehidden</a></li>
+<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-version_dropdown">version_dropdown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-version_dropdown_text">version_dropdown_text</a></li>
+<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-version_json">version_json</a></li>
+<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-version_info">version_info</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="customization.html#customizing-the-layout">Customizing the layout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customization.html#new-blocks">New Blocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customization.html#id3">Version Dropdown</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="customization.html#customizing-the-layout">Customizing the layout</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="customization.html#new-blocks">New Blocks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="customization.html#version-dropdown">Version Dropdown</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="customization.html#using-a-javascript-file">Using a Javascript File</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="customization.html#using-conf-py">Using <code class="docutils literal notranslate"><span class="pre">conf.py</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="admonitions.html">Admonitions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="admonitions.html#rst-and-sphinx">rST and Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admonitions.html#admonitions-from-mkdocs-material">Admonitions from mkdocs-material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admonitions.html#collapsable-dropdown">Collapsable dropdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admonitions.html#custom-admonitions">Custom admonitions</a></li>
 </ul>
 </li>
 </ul>
@@ -535,7 +564,7 @@ or <code class="docutils literal notranslate"><span class="pre">theme.conf</span
 <div class="md-source-date">
   <small>
     
-      Last update: Oct 18, 2021
+      Last update: Nov 02, 2021
     
   </small>
 </div>
@@ -614,6 +643,7 @@ or <code class="docutils literal notranslate"><span class="pre">theme.conf</span
     
       <script src="_static/javascripts/bundle.270123a5.min.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/design-tabs.js"></script>
     
   </body>
 </html>
