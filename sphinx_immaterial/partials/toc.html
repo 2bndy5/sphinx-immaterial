@@ -1,0 +1,19 @@
+{#-
+  This file was automatically generated - do not edit
+-#}
+{% import "partials/language.html" as lang with context %}
+<nav class="md-nav md-nav--secondary" aria-label="{{ lang.t('toc.title') }}">
+  {% set toc = page.toc %}
+  {% if toc | first is defined and (toc | first).children | first is defined %}
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      {{ (toc | first).title }}
+      {% set toc = (toc | first).children %}
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      {% for toc_item in toc %}
+        {% include "partials/toc-item.html" %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</nav>

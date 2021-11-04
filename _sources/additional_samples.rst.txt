@@ -58,7 +58,6 @@ It also works with existing Sphinx highlighting:
       return "Hello World";
     }
 
-
 Footnotes
 =========
 I have footnoted a first item [#f1]_ and second item [#f2]_.

@@ -18,7 +18,7 @@
       
     
     
-      <link rel="stylesheet" href="_static/stylesheets/main.e3eeb26c.min.css">
+      <link rel="stylesheet" href="_static/stylesheets/main.dd2c184e.min.css">
       
         
         <link rel="stylesheet" href="_static/stylesheets/palette.89291e57.min.css">
@@ -38,19 +38,9 @@
         <link rel="stylesheet" type="text/css" href="_static/basic.css" />
         <link rel="stylesheet" type="text/css" href="_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
         <link rel="stylesheet" type="text/css" href="_static/extra_css.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
       
-  
-
-
-
-  
-  
-
-
-
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-XXXXX","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
 
 
     
@@ -432,11 +422,11 @@ node.js installed.</p>
 <span class="n">html_theme</span> <span class="o">=</span> <span class="s2">&quot;sphinx_immaterial&quot;</span>
 </code></pre></div>
 </div>
-<p>There are a lot more ways to customize this theme. See <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#customization" title="(in Python v3.10)"><span>Basic customization</span></a>
+<p>There are a lot more ways to customize this theme. See <a class="reference internal" href="customization.html#customization"><span class="std std-ref">Customization</span></a>
 or <code class="docutils literal notranslate"><span class="pre">theme.conf</span></code> for more details.</p>
-<details class="example">
-<summary>
-Settings used in this documentation</summary><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="c1"># -- HTML theme settings ------------------------------------------------</span>
+<div class="example admonition">
+<p class="admonition-title">Settings used in this documentation</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="c1"># -- HTML theme settings ------------------------------------------------</span>
 
 <span class="n">extensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;sphinx_immaterial&quot;</span><span class="p">)</span>
 <span class="n">html_title</span> <span class="o">=</span> <span class="s2">&quot;Sphinx-Immaterial&quot;</span>
@@ -455,7 +445,7 @@ Settings used in this documentation</summary><div class="highlight-default notra
     <span class="s2">&quot;repo_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sphinx-Immaterial&quot;</span><span class="p">,</span>
     <span class="s2">&quot;repo_type&quot;</span><span class="p">:</span> <span class="s2">&quot;github&quot;</span><span class="p">,</span>
     <span class="s2">&quot;edit_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;blob/main/docs&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;google_analytics&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;UA-XXXXX&quot;</span><span class="p">,</span> <span class="s2">&quot;auto&quot;</span><span class="p">],</span>
+    <span class="c1"># &quot;google_analytics&quot;: [&quot;UA-XXXXX&quot;, &quot;auto&quot;],</span>
     <span class="s2">&quot;globaltoc_collapse&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
     <span class="s2">&quot;globaltoc_depth&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
     <span class="s2">&quot;features&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -497,60 +487,8 @@ Settings used in this documentation</summary><div class="highlight-default notra
 
 </code></pre></div>
 </div>
-</details><div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="customization.html">Customization</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="customization.html#confval-hero">hero</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customization.html#configuration-options">Configuration Options</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="customization.html#confval-html_logo">html_logo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="customization.html#confval-html_theme_options">html_theme_options</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-site_url">site_url</a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-repo_url">repo_url</a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-repo_name">repo_name</a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-repo_type">repo_type</a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-edit_uri">edit_uri</a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-features">features</a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-icon-for-the-repository">icon for the repository</a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-palette">palette</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="customization.html#confval-primary-color">primary color</a></li>
-<li class="toctree-l5"><a class="reference internal" href="customization.html#confval-accent-color">accent color</a></li>
-<li class="toctree-l5"><a class="reference internal" href="customization.html#confval-Toggle-icon">Toggle icon</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-direction">direction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-google_analytics_account">google_analytics_account</a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-globaltoc_depth">globaltoc_depth</a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-globaltoc_collapse">globaltoc_collapse</a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-globaltoc_includehidden">globaltoc_includehidden</a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-version_dropdown">version_dropdown</a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-version_dropdown_text">version_dropdown_text</a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-version_json">version_json</a></li>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#confval-version_info">version_info</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="customization.html#customizing-the-layout">Customizing the layout</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="customization.html#new-blocks">New Blocks</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="customization.html#version-dropdown">Version Dropdown</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="customization.html#using-a-javascript-file">Using a Javascript File</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="customization.html#using-conf-py">Using <code class="docutils literal notranslate"><span class="pre">conf.py</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="admonitions.html">Admonitions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="admonitions.html#rst-and-sphinx">rST and Sphinx</a></li>
-<li class="toctree-l2"><a class="reference internal" href="admonitions.html#admonitions-from-mkdocs-material">Admonitions from mkdocs-material</a></li>
-<li class="toctree-l2"><a class="reference internal" href="admonitions.html#collapsable-dropdown">Collapsable dropdown</a></li>
-<li class="toctree-l2"><a class="reference internal" href="admonitions.html#custom-admonitions">Custom admonitions</a></li>
-</ul>
-</li>
-</ul>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -564,7 +502,7 @@ Settings used in this documentation</summary><div class="highlight-default notra
 <div class="md-source-date">
   <small>
     
-      Last update: Nov 03, 2021
+      Last update: Nov 04, 2021
     
   </small>
 </div>

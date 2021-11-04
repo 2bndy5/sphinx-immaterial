@@ -98,6 +98,8 @@
 .. role:: accent-blue-grey
 .. role:: accent-white
 
+.. _customization:
+
 =============
 Customization
 =============
@@ -302,8 +304,7 @@ Finally, edit your override file ``source/_templates/layout.html``:
     {%- endblock %}
 
 New Blocks
-***********
-
+**************
 The theme has a small number of new blocks to simplify some types of
 customization:
 

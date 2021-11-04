@@ -56,7 +56,7 @@ Update your ``conf.py`` with the required changes:
 There are a lot more ways to customize this theme. See :ref:`Customization`
 or ``theme.conf`` for more details.
 
-.. material-dropdown:: Settings used in this documentation
+.. admonition:: Settings used in this documentation
     :class: example
 
     .. literalinclude:: ./conf.py
@@ -65,6 +65,7 @@ or ``theme.conf`` for more details.
 
 
 .. toctree::
+    :hidden:
 
     customization
     admonitions

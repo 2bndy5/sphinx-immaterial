@@ -18,7 +18,7 @@
       
     
     
-      <link rel="stylesheet" href="_static/stylesheets/main.e3eeb26c.min.css">
+      <link rel="stylesheet" href="_static/stylesheets/main.dd2c184e.min.css">
       
         
         <link rel="stylesheet" href="_static/stylesheets/palette.89291e57.min.css">
@@ -38,19 +38,9 @@
         <link rel="stylesheet" type="text/css" href="_static/basic.css" />
         <link rel="stylesheet" type="text/css" href="_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
         <link rel="stylesheet" type="text/css" href="_static/extra_css.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     
       
-  
-
-
-
-  
-  
-
-
-
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-XXXXX","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
 
 
     
@@ -298,6 +288,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#removing-the-title" class="md-nav__link">
+    Removing the title
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#custom-admonitions" class="md-nav__link">
     Custom admonitions
   </a>
@@ -448,6 +445,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#removing-the-title" class="md-nav__link">
+    Removing the title
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#custom-admonitions" class="md-nav__link">
     Custom admonitions
   </a>
@@ -514,6 +518,16 @@ styling to work. Otherwise, the admonition will look like a <code class="docutil
 default fallback style).</p>
 </div>
 <dl>
+<dt><code class="docutils literal notranslate"><span class="pre">todo</span></code>, <code class="docutils literal notranslate"><span class="pre">info</span></code></dt><dd><div class="info admonition">
+<p class="admonition-title">Info</p>
+<p>Thanks to the mkdocs-material theme, the <code class="docutils literal notranslate"><span class="pre">todo</span></code> class is also an alias of the
+<code class="docutils literal notranslate"><span class="pre">info</span></code> class when not using the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">todo::</span></code> directive.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><code><span class="p">..</span> <span class="ow">admonition</span><span class="p">::</span> Info
+   <span class="nc">:class:</span> info
+</code></pre></div>
+</div>
+</div>
+</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">abstract</span></code>, <code class="docutils literal notranslate"><span class="pre">summary</span></code>, <code class="docutils literal notranslate"><span class="pre">tldr</span></code></dt><dd><div class="tldr admonition">
 <p class="admonition-title">TL;DR</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><code><span class="p">..</span> <span class="ow">admonition</span><span class="p">::</span> TL;DR
@@ -572,111 +586,137 @@ default fallback style).</p>
 </dd>
 </dl>
 <h2 id="collapsable-dropdown">Collapsable dropdown<a class="headerlink" href="#collapsable-dropdown" title="Permalink to this headline">¶</a></h2>
-<p>This sphinx-immaterial theme has native support for dropdown (or collapsable) admonitions.
-To use them, the syntax is <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">material-dropdown::</span></code></p>
-<p>Because the dropdown uses a <code class="docutils literal notranslate"><span class="pre">note</span></code> admonition CSS style, you can further customize the
-dropdown style using the <code class="docutils literal notranslate"><span class="pre">:class:</span></code> option again.</p>
-<details class="example">
-<summary>
-Closed by default</summary><details class="attention" open="open">
-<summary>
-Open by default</summary><p>This admonition is expanded on page load because the <code class="docutils literal notranslate"><span class="pre">:open:</span></code> option was additionally
-provided.</p>
-</details><details>
-<summary>
-rST source code for this example dropdown</summary><p>This dropdown has no options specified.</p>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><code><span class="p">..</span> <span class="ow">material-dropdown</span><span class="p">::</span> Closed by default
-   <span class="nc">:class:</span> example
-
-<span class="p">   ..</span> <span class="ow">material-dropdown</span><span class="p">::</span> Open by default
-      <span class="nc">:class:</span> attention
-      <span class="nc">:open:</span>
-
-      This admonition is expanded on page load because the <span class="s">``:open:``</span> option was additionally
-      provided.
-
-<span class="p">   ..</span> <span class="ow">material-dropdown</span><span class="p">::</span> rST source code for this example dropdown
-
-      This dropdown has no options specified.
-
-<span class="p">      ..</span> <span class="ow">literalinclude</span><span class="p">::</span> admonitions.rst
-         <span class="nc">:start-at:</span> .. material-dropdown:: Closed by default
-         <span class="nc">:end-before:</span> .. versionadded:: 0.1.1
+<p>For collapsable dropdown admonitions, the mkdocs-material theme relies on a markdown syntax
+extension that cannot be used with sphinx. Instead, this sphinx-immaterial theme relies on
+other sphinx extensions to get similar (and more customizable) results.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-outline-danger sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header sd-text-primary sd-outline-primary sd-fs-6">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-package-dependents" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M6.122.392a1.75 1.75 0 011.756 0l5.25 3.045c.54.313.872.89.872 1.514V7.25a.75.75 0 01-1.5 0V5.677L7.75 8.432v6.384a1 1 0 01-1.502.865L.872 12.563A1.75 1.75 0 010 11.049V4.951c0-.624.332-1.2.872-1.514L6.122.392zM7.125 1.69l4.63 2.685L7 7.133 2.245 4.375l4.63-2.685a.25.25 0 01.25 0zM1.5 11.049V5.677l4.75 2.755v5.516l-4.625-2.683a.25.25 0 01-.125-.216zm10.828 3.684a.75.75 0 101.087 1.034l2.378-2.5a.75.75 0 000-1.034l-2.378-2.5a.75.75 0 00-1.087 1.034L13.501 12H10.25a.75.75 0 000 1.5h3.251l-1.173 1.233z"></path></svg></span>We endorse the sphinx-design extension!<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-card sd-sphinx-override sd-m-auto sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold sd-text-center docutils">
+You can do some pretty cool stuff with the <span class="sd-sphinx-override sd-badge sd-outline-info sd-text-info">sphinx-design extension</span>.</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto sd-m-auto docutils">
+<p class="sd-card-text"><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-success reference external" href="https://sphinx-design.readthedocs.io/en/furo-theme/badges_buttons.html#buttons" title="(in Sphinx Design)"><span>Buttons</span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto sd-m-auto docutils">
+<p class="sd-card-text"><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-success reference external" href="https://sphinx-design.readthedocs.io/en/furo-theme/tabs.html#tabs" title="(in Sphinx Design)"><span>Tabs</span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto sd-m-auto docutils">
+<p class="sd-card-text"><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-success reference external" href="https://sphinx-design.readthedocs.io/en/furo-theme/grids.html#grids" title="(in Sphinx Design)"><span>Grids</span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto sd-m-auto docutils">
+<p class="sd-card-text"><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-success reference external" href="https://sphinx-design.readthedocs.io/en/furo-theme/cards.html#cards" title="(in Sphinx Design)"><span>Cards</span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-auto sd-col-xs-auto sd-col-sm-auto sd-col-md-auto sd-col-lg-auto sd-m-auto docutils">
+<p class="sd-card-text"><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-success reference external" href="https://sphinx-design.readthedocs.io/en/furo-theme/dropdowns.html#dropdowns" title="(in Sphinx Design)"><span>Dropdowns</span></a></p>
+</div>
+</div>
+</div>
+<p class="sd-card-text">Not to mention inline octicon <svg version="1.1" width="1.5rem" height="1.5rem" class="sd-octicon sd-octicon-infinity sd-text-info" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.25 8.5c-2.032 0-3.75 1.895-3.75 3.75S3.218 16 5.25 16c1.017 0 2.014-.457 3.062-1.253.89-.678 1.758-1.554 2.655-2.497-.897-.943-1.765-1.82-2.655-2.497C7.264 8.957 6.267 8.5 5.25 8.5zM12 11.16c-.887-.933-1.813-1.865-2.78-2.6C8.048 7.667 6.733 7 5.25 7 2.343 7 0 9.615 0 12.25s2.343 5.25 5.25 5.25c1.483 0 2.798-.668 3.97-1.56.967-.735 1.893-1.667 2.78-2.6.887.933 1.813 1.865 2.78 2.6 1.172.892 2.487 1.56 3.97 1.56 2.907 0 5.25-2.615 5.25-5.25S21.657 7 18.75 7c-1.483 0-2.798.668-3.97 1.56-.967.735-1.893 1.667-2.78 2.6zm1.033 1.09c.897.943 1.765 1.82 2.655 2.497C16.736 15.543 17.733 16 18.75 16c2.032 0 3.75-1.895 3.75-3.75S20.782 8.5 18.75 8.5c-1.017 0-2.014.457-3.062 1.253-.89.678-1.758 1.554-2.655 2.497z"></path></svg> and fontawesome
+<span class="fab fa-font-awesome-flag"></span> icons and <a class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info reference external" href="https://sphinx-design.readthedocs.io/en/furo-theme/badges_buttons.html#badges" title="(in Sphinx Design)"><span>Badges</span></a>.</p>
+</div>
+</div>
+</div>
+</details><h2 id="removing-the-title">Removing the title<a class="headerlink" href="#removing-the-title" title="Permalink to this headline">¶</a></h2>
+<p>Since the mkdocs-material theme relies on a mardown extension that also allows removing the title
+from an admonition, this theme has an added directive to do just that: <code class="docutils literal notranslate"><span class="pre">md-admonition</span></code>.</p>
+<p>The admonition’s title can be removed if the <code class="docutils literal notranslate"><span class="pre">md-admonition</span></code> directive is not provided
+any arguments. Because the <code class="docutils literal notranslate"><span class="pre">md-admonition</span></code> directive is an adaptation of the generic
+<code class="docutils literal notranslate"><span class="pre">admonition</span></code> directive, the <code class="docutils literal notranslate"><span class="pre">class</span></code> option is still respected.</p>
+<div class="error admonition">
+<p>This example uses the styling of the <code class="docutils literal notranslate"><span class="pre">error</span></code> admonition</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><code><span class="p">..</span> <span class="ow">md-admonition</span><span class="p">::</span>
+   <span class="nc">:class:</span> error
 </code></pre></div>
 </div>
-</details></details><div class="versionadded">
-<p><span class="versionmodified added">New in version 0.1.1: </span>Added native support for dropdown admonitions.</p>
+</div>
+<div class="help admonition">
+<p class="admonition-title">Using a title</p>
+<p>This example uses the styling of the <code class="docutils literal notranslate"><span class="pre">help</span></code> admonition</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><code><span class="p">..</span> <span class="ow">md-admonition</span><span class="p">::</span> Using a title
+   <span class="nc">:class:</span> help
+</code></pre></div>
+</div>
 </div>
 <h2 id="custom-admonitions">Custom admonitions<a class="headerlink" href="#custom-admonitions" title="Permalink to this headline">¶</a></h2>
 <p>If you want to add a custom admonition type, all you need is a color and an *.svg icon.
 Copy the icon’s code from the <a class="reference external" href="https://github.com/squidfunk/mkdocs-material/tree/master/material/.icons">.icons</a>
 folder and add the new CSS to an additional style sheet.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="7cc84fdb-3dcb-499e-a750-8e9dff85a2eb" name="6476e68f-d079-46ed-91a3-2c51b6e126c3" type="radio">
-</input><label class="sd-tab-label" for="7cc84fdb-3dcb-499e-a750-8e9dff85a2eb">
+<input checked="checked" id="4936048b-cfc6-4a16-a43d-c1d2bbadc435" name="03b42059-2074-4c1c-a697-f89036c53579" type="radio">
+</input><label class="sd-tab-label sd-font-weight-light" for="4936048b-cfc6-4a16-a43d-c1d2bbadc435">
 rST code</label><div class="sd-tab-content docutils">
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><code><span class="p">..</span> <span class="ow">admonition</span><span class="p">::</span> Pied Piper
-    <span class="nc">:class:</span> pied-piper
+      <span class="nc">:class:</span> pied-piper
 
-    Don&#39;t tell him you use spaces instead of tabs...
+      Don&#39;t tell him you use spaces instead of tabs...
 </code></pre></div>
 </div>
 </div>
-<input id="a02ac6d2-35c4-474a-95e9-e06bfb7f3ea6" name="6476e68f-d079-46ed-91a3-2c51b6e126c3" type="radio">
-</input><label class="sd-tab-label" for="a02ac6d2-35c4-474a-95e9-e06bfb7f3ea6">
+<input id="7ceef4db-1cf2-4722-a83d-d6cc4187e05b" name="03b42059-2074-4c1c-a697-f89036c53579" type="radio">
+</input><label class="sd-tab-label sd-font-weight-light" for="7ceef4db-1cf2-4722-a83d-d6cc4187e05b">
 CSS code</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">docs/_static/extra_css.css</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><code><span class="p">:</span><span class="nd">root</span> <span class="p">{</span>
-    <span class="nv">--md-admonition-icon--pied-piper</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="s1">&#39;data:image/svg+xml;charset=utf-8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 576 512&quot;&gt;&lt;path d=&quot;M244 246c-3.2-2-6.3-2.9-10.1-2.9-6.6 0-12.6 3.2-19.3 3.7l1.7 4.9zm135.9 197.9c-19 0-64.1 9.5-79.9 19.8l6.9 45.1c35.7 6.1 70.1 3.6 106-9.8-4.8-10-23.5-55.1-33-55.1zM340.8 177c6.6 2.8 11.5 9.2 22.7 22.1 2-1.4 7.5-5.2 7.5-8.6 0-4.9-11.8-13.2-13.2-23 11.2-5.7 25.2-6 37.6-8.9 68.1-16.4 116.3-52.9 146.8-116.7C548.3 29.3 554 16.1 554.6 2l-2 2.6c-28.4 50-33 63.2-81.3 100-31.9 24.4-69.2 40.2-106.6 54.6l-6.3-.3v-21.8c-19.6 1.6-19.7-14.6-31.6-23-18.7 20.6-31.6 40.8-58.9 51.1-12.7 4.8-19.6 10-25.9 21.8 34.9-16.4 91.2-13.5 98.8-10zM555.5 0l-.6 1.1-.3.9.6-.6zm-59.2 382.1c-33.9-56.9-75.3-118.4-150-115.5l-.3-6c-1.1-13.5 32.8 3.2 35.1-31l-14.4 7.2c-19.8-45.7-8.6-54.3-65.5-54.3-14.7 0-26.7 1.7-41.4 4.6 2.9 18.6 2.2 36.7-10.9 50.3l19.5 5.5c-1.7 3.2-2.9 6.3-2.9 9.8 0 21 42.8 2.9 42.8 33.6 0 18.4-36.8 60.1-54.9 60.1-8 0-53.7-50-53.4-60.1l.3-4.6 52.3-11.5c13-2.6 12.3-22.7-2.9-22.7-3.7 0-43.1 9.2-49.4 10.6-2-5.2-7.5-14.1-13.8-14.1-3.2 0-6.3 3.2-9.5 4-9.2 2.6-31 2.9-21.5 20.1L15.9 298.5c-5.5 1.1-8.9 6.3-8.9 11.8 0 6 5.5 10.9 11.5 10.9 8 0 131.3-28.4 147.4-32.2 2.6 3.2 4.6 6.3 7.8 8.6 20.1 14.4 59.8 85.9 76.4 85.9 24.1 0 58-22.4 71.3-41.9 3.2-4.3 6.9-7.5 12.4-6.9.6 13.8-31.6 34.2-33 43.7-1.4 10.2-1 35.2-.3 41.1 26.7 8.1 52-3.6 77.9-2.9 4.3-21 10.6-41.9 9.8-63.5l-.3-9.5c-1.4-34.2-10.9-38.5-34.8-58.6-1.1-1.1-2.6-2.6-3.7-4 2.2-1.4 1.1-1 4.6-1.7 88.5 0 56.3 183.6 111.5 229.9 33.1-15 72.5-27.9 103.5-47.2-29-25.6-52.6-45.7-72.7-79.9zm-196.2 46.1v27.2l11.8-3.4-2.9-23.8zm-68.7-150.4l24.1 61.2 21-13.8-31.3-50.9zm84.4 154.9l2 12.4c9-1.5 58.4-6.6 58.4-14.1 0-1.4-.6-3.2-.9-4.6-26.8 0-36.9 3.8-59.5 6.3z&quot;/&gt;&lt;/svg&gt;&#39;</span><span class="p">)</span>
+  <span class="nv">--md-admonition-icon--pied-piper</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="s1">&#39;data:image/svg+xml;charset=utf-8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 576 512&quot;&gt;&lt;path d=&quot;M244 246c-3.2-2-6.3-2.9-10.1-2.9-6.6 0-12.6 3.2-19.3 3.7l1.7 4.9zm135.9 197.9c-19 0-64.1 9.5-79.9 19.8l6.9 45.1c35.7 6.1 70.1 3.6 106-9.8-4.8-10-23.5-55.1-33-55.1zM340.8 177c6.6 2.8 11.5 9.2 22.7 22.1 2-1.4 7.5-5.2 7.5-8.6 0-4.9-11.8-13.2-13.2-23 11.2-5.7 25.2-6 37.6-8.9 68.1-16.4 116.3-52.9 146.8-116.7C548.3 29.3 554 16.1 554.6 2l-2 2.6c-28.4 50-33 63.2-81.3 100-31.9 24.4-69.2 40.2-106.6 54.6l-6.3-.3v-21.8c-19.6 1.6-19.7-14.6-31.6-23-18.7 20.6-31.6 40.8-58.9 51.1-12.7 4.8-19.6 10-25.9 21.8 34.9-16.4 91.2-13.5 98.8-10zM555.5 0l-.6 1.1-.3.9.6-.6zm-59.2 382.1c-33.9-56.9-75.3-118.4-150-115.5l-.3-6c-1.1-13.5 32.8 3.2 35.1-31l-14.4 7.2c-19.8-45.7-8.6-54.3-65.5-54.3-14.7 0-26.7 1.7-41.4 4.6 2.9 18.6 2.2 36.7-10.9 50.3l19.5 5.5c-1.7 3.2-2.9 6.3-2.9 9.8 0 21 42.8 2.9 42.8 33.6 0 18.4-36.8 60.1-54.9 60.1-8 0-53.7-50-53.4-60.1l.3-4.6 52.3-11.5c13-2.6 12.3-22.7-2.9-22.7-3.7 0-43.1 9.2-49.4 10.6-2-5.2-7.5-14.1-13.8-14.1-3.2 0-6.3 3.2-9.5 4-9.2 2.6-31 2.9-21.5 20.1L15.9 298.5c-5.5 1.1-8.9 6.3-8.9 11.8 0 6 5.5 10.9 11.5 10.9 8 0 131.3-28.4 147.4-32.2 2.6 3.2 4.6 6.3 7.8 8.6 20.1 14.4 59.8 85.9 76.4 85.9 24.1 0 58-22.4 71.3-41.9 3.2-4.3 6.9-7.5 12.4-6.9.6 13.8-31.6 34.2-33 43.7-1.4 10.2-1 35.2-.3 41.1 26.7 8.1 52-3.6 77.9-2.9 4.3-21 10.6-41.9 9.8-63.5l-.3-9.5c-1.4-34.2-10.9-38.5-34.8-58.6-1.1-1.1-2.6-2.6-3.7-4 2.2-1.4 1.1-1 4.6-1.7 88.5 0 56.3 183.6 111.5 229.9 33.1-15 72.5-27.9 103.5-47.2-29-25.6-52.6-45.7-72.7-79.9zm-196.2 46.1v27.2l11.8-3.4-2.9-23.8zm-68.7-150.4l24.1 61.2 21-13.8-31.3-50.9zm84.4 154.9l2 12.4c9-1.5 58.4-6.6 58.4-14.1 0-1.4-.6-3.2-.9-4.6-26.8 0-36.9 3.8-59.5 6.3z&quot;/&gt;&lt;/svg&gt;&#39;</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="p">.</span><span class="nc">md-typeset</span> <span class="p">.</span><span class="nc">admonition</span><span class="p">.</span><span class="nc">pied-piper</span><span class="o">,</span>
 <span class="p">.</span><span class="nc">md-typeset</span> <span class="nt">details</span><span class="p">.</span><span class="nc">pied-piper</span> <span class="p">{</span>
-    <span class="k">border-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">43</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">70</span><span class="p">);</span>
+  <span class="k">border-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">43</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">70</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="p">.</span><span class="nc">md-typeset</span> <span class="p">.</span><span class="nc">pied-piper</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">admonition-title</span><span class="o">,</span>
 <span class="p">.</span><span class="nc">md-typeset</span> <span class="p">.</span><span class="nc">pied-piper</span> <span class="o">&gt;</span> <span class="nt">summary</span> <span class="p">{</span>
-    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">43</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
-    <span class="k">border-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">43</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">70</span><span class="p">);</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">43</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
+  <span class="k">border-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">43</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">70</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="p">.</span><span class="nc">md-typeset</span> <span class="p">.</span><span class="nc">pied-piper</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">admonition-title</span><span class="p">::</span><span class="nd">before</span><span class="o">,</span>
 <span class="p">.</span><span class="nc">md-typeset</span> <span class="p">.</span><span class="nc">pied-piper</span> <span class="o">&gt;</span> <span class="nt">summary</span><span class="p">::</span><span class="nd">before</span> <span class="p">{</span>
-    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">43</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">70</span><span class="p">);</span>
-    <span class="kp">-webkit-</span><span class="k">mask-image</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="nv">--md-admonition-icon--pied-piper</span><span class="p">);</span>
-            <span class="k">mask-image</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="nv">--md-admonition-icon--pied-piper</span><span class="p">);</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">43</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">70</span><span class="p">);</span>
+  <span class="kp">-webkit-</span><span class="k">mask-image</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="nv">--md-admonition-icon--pied-piper</span><span class="p">);</span>
+        <span class="k">mask-image</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="nv">--md-admonition-icon--pied-piper</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
 </div>
 </div>
-<input id="e3497a76-8d24-46a6-bf1e-cabfd8c54637" name="6476e68f-d079-46ed-91a3-2c51b6e126c3" type="radio">
-</input><label class="sd-tab-label" for="e3497a76-8d24-46a6-bf1e-cabfd8c54637">
+<input id="84e3bf0a-2b73-4a2f-8642-7f3832dd6e38" name="03b42059-2074-4c1c-a697-f89036c53579" type="radio">
+</input><label class="sd-tab-label sd-font-weight-light" for="84e3bf0a-2b73-4a2f-8642-7f3832dd6e38">
 conf.py code</label><div class="sd-tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_static&quot;</span><span class="p">]</span>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_static&quot;</span><span class="p">]</span>
 <span class="n">html_css_files</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;extra_css.css&quot;</span><span class="p">]</span>
 </code></pre></div>
 </div>
+</div></blockquote>
 </div>
 </div>
 <div class="pied-piper admonition">
 <p class="admonition-title">Pied Piper</p>
 <p>Don’t tell him you use spaces instead of tabs…</p>
 </div>
-<details class="hint" id="tabbed-locks">
-<summary>
-The use of tabbed blocks (as seen above) are provided from
-<a class="reference external" href="https://sphinx-design.readthedocs.io/en/furo-theme/tabs.html">sphinx-design extension</a>.
-We added some custom CSS to make the tabs’ labels conform to this theme’s color palete.</summary><div class="highlight-css notranslate"><div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">sd-tab-set</span><span class="o">&gt;</span><span class="nt">input</span><span class="p">:</span><span class="nd">checked</span><span class="o">+</span><span class="nt">label</span> <span class="p">{</span>
-    <span class="k">border-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="nv">--md-primary-fg-color</span><span class="p">);</span>
-    <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="nv">--md-primary-fg-color</span><span class="p">);</span>
+<div class="todo admonition" id="tabbed-locks">
+<p>The use of tabbed blocks (as seen above) are provided from <a class="reference external" href="`&lt;https://sphinx-design.readthedocs.io/en/furo-theme&gt;`_">sphinx-design extension</a>.
+We added some custom CSS to make the tabs’ labels conform to this theme’s color palete.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">sd-tab-set</span><span class="o">&gt;</span><span class="nt">input</span><span class="p">:</span><span class="nd">checked</span><span class="o">+</span><span class="nt">label</span> <span class="p">{</span>
+   <span class="k">border-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="nv">--md-primary-fg-color</span><span class="p">);</span>
+   <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="nv">--md-primary-fg-color</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="p">.</span><span class="nc">sd-tab-set</span><span class="o">&gt;</span><span class="nt">input</span><span class="p">:</span><span class="nd">not</span><span class="o">(</span><span class="p">:</span><span class="nd">checked</span><span class="o">)+</span><span class="nt">label</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
-    <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="nv">--md-primary-fg-color</span><span class="p">);</span>
+   <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="nv">--md-primary-fg-color</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
-</details>
+</div>
+
 
                 
                   
@@ -686,7 +726,7 @@ We added some custom CSS to make the tabs’ labels conform to this theme’s co
 <div class="md-source-date">
   <small>
     
-      Last update: Nov 03, 2021
+      Last update: Nov 04, 2021
     
   </small>
 </div>
