@@ -939,6 +939,12 @@ def get_extent_spelling(translation_unit: TranslationUnit, extent: SourceRange) 
     whitespace.  This results in excessive whitespace, but that does not matter
     because this is intended to be parsed by the Sphinx cpp domain anyway.
     """
+    no_spaces = (
+        (TokenKind.KEYWORD, TokenKind.PUNCTUATION),
+        (TokenKind.IDENTIFIER, TokenKind.PUNCTUATION),
+        (TokenKind.PUNCTUATION, TokenKind.KEYWORD),
+        (TokenKind.PUNCTUATION, TokenKind.IDENTIFIER),
+    )
 
     def get_spellings():
         prev_token = None
@@ -946,14 +952,18 @@ def get_extent_spelling(translation_unit: TranslationUnit, extent: SourceRange) 
         for token in translation_unit.get_tokens(extent=extent):
             if prev_token is not None:
                 yield prev_token.spelling
+                if (prev_token.kind, token.kind) not in no_spaces:
+                    yield " "
                 prev_token = None
             if token.kind == COMMENT:
+                yield " "
                 continue
             prev_token = token
         # We need to handle the last token specially, because clang sometimes parses
         # ">>" as a single token but the extent may cover only the first of the two
         # angle brackets.
         if prev_token is not None:
+            yield " "
             spelling = prev_token.spelling
             token_end = cast(SourceLocation, prev_token.extent.end)
             offset_diff = token_end.offset - cast(SourceLocation, extent.end).offset
@@ -962,7 +972,7 @@ def get_extent_spelling(translation_unit: TranslationUnit, extent: SourceRange) 
             else:
                 yield spelling
 
-    return " ".join(get_spellings())
+    return "".join(get_spellings())
 
 
 def get_related_comments(decl: Cursor):
@@ -1532,10 +1542,7 @@ def _transform_unexposed_decl(config: Config, decl: Cursor) -> Optional[VarEntit
     # exposed as an unexposed decl.
 
     source_code = get_extent_spelling(decl.translation_unit, decl.extent)
-
-    # Note: Since `source_code` is reconstructed from the tokens, we don't need to
-    # worry about inconsistency in spacing.
-    if not source_code.startswith("template <"):
+    if not re.search(r"^\s*template\s*<", source_code):
         return None
 
     # Assume that it is a variable template
@@ -2344,6 +2351,7 @@ def organize_entities(
         if _is_function(entity):
             func_entity = cast(FunctionEntity, entity)
             declaration = func_entity["declaration"]
+            declaration = _substitute_internal_type_names(config, declaration)
             if replacements:
                 declaration = _apply_identifier_replacements(declaration, replacements)
             if (
